@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    overflow-x: hidden;
+    background-color: #fbfaf9;
+    font-family: "Basier", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #000;
+}
+
+::selection {
+    color: white;
+    background: #444;
+}
+
+h1, .subline {
+    font-size: 2.75rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+
+.mono {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.bg-gradient {
+    background-image: linear-gradient(45deg, #E52EE5, #FF7E44);
+}
+
+.setup-shadow {
+    box-shadow: rgb(66 71 76 / 25%) 0px 0px 1px, rgb(10 11 30 / 6%) 0px 4px 8px, rgb(10 11 30 / 8%) 0px 8px 48px;
+}
+
+@layer base {
+    body {
+        @apply bg-gray-100 text-white;
+    }
+    
+    h1 {
+        @apply text-5xl tracking-tight font-extrabold text-gray-900;
+    }
+
+    h2 {
+        @apply text-4xl tracking-tight font-extrabold text-gray-900;
+    }
+
+    h3 {
+        @apply text-2xl tracking-tight font-extrabold text-gray-900;
+    }
+}
+
+@layer components {
+    .btn-default {
+        @apply text-white px-4 py-2 rounded bg-black hover:bg-gray-800 transition-colors cursor-pointer;
+    }
+
+    .btn-blue {
+        @apply text-white font-bold px-4 py-2 rounded bg-blue-600 hover:bg-blue-500 transition-colors cursor-pointer;
+    }
+    
+    .btn-empty {
+        @apply text-black px-4 py-2 rounded border border-gray-200 bg-white hover:bg-gray-200 transition-colors cursor-pointer;
+    }
+}
+
+@keyframes blink {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink {
+    animation: blink .55s ease-in alternate infinite;
+}
+
+.scenario-content p {
+    margin: 15px 0;
+}
