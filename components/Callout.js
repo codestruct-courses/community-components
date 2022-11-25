@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { CheckIcon, ClipboardIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
 
 const Callout = ({ type, children }) => {
+    console.log(type)
     const [color, setColor] = useState(
         type === "info" ? "blue" :
         type === "danger" ? "red" :

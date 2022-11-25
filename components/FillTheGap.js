@@ -4,8 +4,8 @@ import { InformationCircleIcon, ArrowPathIcon } from '@heroicons/react/24/outlin
 const FillTheGap = ({ caption, children }) => {
     const [isCorrect, setIsCorrect] = useState(null)
 
-    const gaps = React.Children.map(children, (child, index) => {
-        if (child.type === "gap") {
+    const gaps = React.Children.map(children?.props?.children, (child, index) => {
+        if (child.type === "span") {
             let gapLength = child.props.answer.length || undefined
             return <input type="text" size={gapLength} className="border border-gray-200 rounded-lg bg-white text-sm" key={index} />
         } else {
@@ -14,7 +14,7 @@ const FillTheGap = ({ caption, children }) => {
     })
 
     const checkAnswers = (e) => {
-        let correctAnswers = React.Children.toArray(children).filter(child => child.type === "gap").map(child => child.props.answer)
+        let correctAnswers = React.Children.toArray(children.props.children).filter(child => child.type === "span").map(child => child.props.answer)
         let userInputs = e.target.closest(".fill-the-gap").querySelectorAll("input")
         let userAnswers = Array.from(userInputs).map(input => input.value)
 

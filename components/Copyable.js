@@ -5,7 +5,7 @@ const Copyable = ({ children }) => {
     const [copied, setCopied] = useState(false)
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(children)
+        navigator.clipboard.writeText(children?.props?.children)
         setCopied(true)
         setTimeout(() => {
             setCopied(false)
@@ -14,7 +14,7 @@ const Copyable = ({ children }) => {
 
     return (
         <div className="border-2 border-gray-200 rounded-lg bg-white mb-8 relative">
-            <div onClick={copyToClipboard} className="cursor-pointer bg-gray-100 hover:bg-gray-300 transition-colors rounded p-2 absolute right-2 top-2">
+            <div onClick={copyToClipboard} className="cursor-pointer bg-gray-100 hover:bg-gray-300 transition-colors rounded p-2 absolute top-2 right-2">
                 {copied ? (
                     <CheckIcon className="h-5 w-5 text-green-500" />
                 ) : (

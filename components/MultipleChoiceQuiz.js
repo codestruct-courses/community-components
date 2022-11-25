@@ -4,7 +4,7 @@ import { ArrowPathIcon, InformationCircleIcon } from '@heroicons/react/24/outlin
 const MultipleChoiceQuiz = ({ question, children }) => {
     const [answers, setAnswers] = useState([])
     const [isCorrect, setIsCorrect] = useState(null)
-    const correctAnswers = React.Children.toArray(children).filter(child => child.props.correct == "true")
+    const correctAnswers = React.Children.toArray(children).filter(child => child.props?.correct == "true")
 
     const handleAnswer = (answer) => {
         if (answers?.includes(answer)) {
@@ -40,13 +40,13 @@ const MultipleChoiceQuiz = ({ question, children }) => {
                 </div>
             </div>
             <div className="p-4">
-                {children.map((child, index) => {
+                {children?.filter(child => child.props?.correct).map((child, index) => {
                     return (
                         <div onClick={() => handleAnswer(child)} key={index} className="grid grid-cols-12 gap-4 border-2 border-gray-200 p-4 rounded bg-white cursor-pointer my-4">
                             <div className="col-span-1">
                                 <input checked={answers?.includes(child)} type="checkbox" name="answer" id={`answer-${index}`} value={index} onChange={(e) => setAnswers(e.target.value)} />
                             </div>
-                            <div className="col-span-11" onClick={() => setAnswers(index)} data-correct={child.props.correct}>
+                            <div className="col-span-11" onClick={() => setAnswers(index)} data-correct={child.props?.correct}>
                                 {child}
                             </div>
                         </div>

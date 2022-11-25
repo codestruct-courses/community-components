@@ -17,16 +17,22 @@ const AppHome = () => {
             </MultipleChoiceQuiz>
 
             <Copyable>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quisquam error nemo possimus delectus repudiandae accusantium expedita laudantium debitis asperiores, tempore quam illum porro quo iure qui incidunt eos sit?
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quisquam error nemo possimus delectus repudiandae accusantium expedita laudantium debitis asperiores, tempore quam illum porro quo iure qui incidunt eos sit?
+                </p>
             </Copyable>
 
             <Callout type="info">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse rem consectetur exercitationem suscipit dolo ribus dolor, beatae iste quam cumque voluptatem, sunt iure eos eveniet, dolorem corrupti veritatis! Dolores, ducimus corporis!
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse rem consectetur exercitationem suscipit dolo ribus dolor, beatae iste quam cumque voluptatem, sunt iure eos eveniet, dolorem corrupti veritatis! Dolores, ducimus corporis!
+                </p>
             </Callout>
 
             <FillTheGap caption="Can you fill in all the gaps?">
-                This is an example where you're asked to fill in the gap to correctly answer 5 x <gap answer="5"></gap> = 25. <br/>
-                Here's <gap answer="another"></gap> example where you have to fill in 'another'.
+                <p>
+                    This is an example where you're asked to fill in the gap to correctly answer 5 x <span answer="5"></span> = 25. <br/>
+                    Here's <span answer="another"></span> example where you have to fill in 'another'.
+                </p>
             </FillTheGap>
 
             <Reveal caption="Click to reveal">
