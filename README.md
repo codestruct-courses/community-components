@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/codestruct-courses/community-components">
-    <img src="https://codestruct.io/img/logo/logo-with-background.png" alt="Codestruct logo">
+    <img src="https://codestruct.io/img/logo/logo-with-background.png" alt="Codestruct logo" style="max-width: 80px;">
   </a>
 
   <h3 align="center">codestruct.io</h3>
